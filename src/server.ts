@@ -7,6 +7,8 @@ import { convertMinutesToHourString } from "./utils/convertMinutesToHourString";
 
 const app = express()
 
+const PORT = process.env.PORT || 5050
+
 app.use(express.json())
 app.use(cors())
 
@@ -97,4 +99,4 @@ app.get('/ads/:id/discord', async (req, res) => {
   })
 })
 
-app.listen(3333)
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
